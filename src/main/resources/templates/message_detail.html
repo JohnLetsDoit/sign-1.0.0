@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="row">
+    <div class="col-xs-6">
+        <dl>
+            <dt>姓名：</dt>
+            <dd><p th:text="${message.signname}"></p></dd>
+            <br />
+
+            <dt>爱好、特长：</dt>
+            <dd><p th:text="${message.hobby}"></p></dd>
+            <br />
+
+        </dl>
+    </div>
+
+    <div class="col-xs-6">
+        <dl>
+            <dt>所在学院：</dt>
+            <dd><p th:text="${message.college}"></p></dd>
+            <br />
+
+            <dt>申请理由：</dt>
+            <dd><p th:text="${message.signreason}"></p></dd>
+        </dl>
+    </div>
+</div>
+</html>

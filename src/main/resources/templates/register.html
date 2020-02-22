@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>在线报名—大学生探索网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS -->
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700'>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <!-- Bootstrap 3.3.7 -->
+    <!--<link rel="stylesheet" href="/static/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/static/assets/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="/static/assets/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="/static/assets/plugins/iCheck/all.css" />
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/static/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/static/assets/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+    folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="/static/assets/css/skins/_all-skins.min.css"></head>
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="/static/assets/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="/static/assets/plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="/static/assets/bower_components/select2/dist/css/select2.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/static/assets/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="/static/assets/css/skins/_all-skins.min.css">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="/static/assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="logo span4">
+                <h1><a href="#"><img src="/static/assets/img/logo1.png" style="width:300px; height:80px "> </a></h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="register-container container">
+    <div class="row">
+        <div class="iphone span5">
+            <img src="/static/assets/img/iphone1.png" alt="">
+        </div>
+        <div class="register span6">
+            <form action="/message/save" method="post">
+                <h2>JOIN TO <span class="red"><strong>探索网</strong></span></h2>
+                <div th:if="${baseResult != null}">
+                    <div th:if="${baseResult.status == 200}" class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true" style="margin-top:-1px;width: 20%">&times;</button>
+                        <p th:text="${baseResult.message}" style="margin-top: 5px;margin-left: -93px"></p>
+                    </div>
+                    <div th:if="${baseResult.status != 200}" class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true" style="margin-top:-1px;width: 20%">&times;</button>
+                        <p th:text="${baseResult.message}" style="margin-top: 5px;margin-left: -93px"></p>
+                    </div>
+                </div>
+                <div style="display: none">
+                    <label for="signname">ID：</label>
+                    <input type="text" id="id" name="id">
+                </div>
+                <label for="signname">姓名：</label>
+                <input type="text" id="signname" name="signname" placeholder="请输入您的姓名">
+                <label for="gender" class="col-sm-4 control-label">性别：</label>
+                <select class="form-control col-xs-6 " name="gender" id="gender" style="width: 98%;height: 40px" placeholder="性别">
+                    <option>男</option>
+                    <option>女</option>
+                </select>
+                <label for="birthplace"  class="col-sm-4 control-label">所在省份：</label>
+                <select class="form-control col-xs-6 " name="birthPlace" id="birthplace" style="width: 98%;height: 40px" >
+                    <option value="辽宁省">辽宁省</option>
+                    <option value="吉林省">吉林省</option>
+                    <option value="黑龙江省">黑龙江省</option>
+                    <option value="北京">北京市</option>
+                    <option value="浙江省">浙江省</option>
+                    <option value="天津市">天津市</option>
+                    <option value="安徽省">安徽省</option>
+                    <option value="上海市">上海市</option>
+                    <option value="福建省">福建省</option>
+                    <option value="重庆市">重庆市</option>
+                    <option value="江西省">江西省</option>
+                    <option value="山东省">山东省</option>
+                    <option value="河南省">河南省</option>
+                    <option value="湖北省">湖北省</option>
+                    <option value="湖南省">湖南省</option>
+                    <option value="广东省">广东省</option>
+                    <option value="海南省">海南省</option>
+                    <option value="山西省">山西省</option>
+                    <option value="青海省">青海省</option>
+                    <option value="江苏省">江苏省</option>
+                    <option value="吉林省">吉林省</option>
+                    <option value="河北省">河北省</option>
+                    <option value="贵州省">贵州省</option>
+                    <option value="四川省">四川省</option>
+                    <option value="云南省">云南省</option>
+                    <option value="陕西省">陕西省</option>
+                    <option value="甘肃省">甘肃省</option>
+                    <option value="广西壮族自治区">广西壮族自治区</option>
+                    <option value="宁夏回族自治区">宁夏回族自治区</option>
+                    <option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+                    <option value="内蒙古自治区">内蒙古自治区</option>
+                    <option value="西藏自治区">西藏自治区</option>
+                    <option>其他</option>
+                </select>
+                <label for="datepicker">出生日期</label>
+                <input type="text" class="form-control pull-right" value="" name="dayOfBirth" id="datepicker" placeholder="请选择..." style="width: 96%;">
+
+                <label for="college" class="col-sm-4 control-label">学院：</label>
+                <select class="form-control col-xs-6 " name="college" id="college" style="width: 98%;height: 40px" >
+                    <option value="电信学院">电信学院</option>
+                    <option value="汽车学院">汽车学院</option>
+                    <option value="外国语学院">外国语学院</option>
+                    <option value="国际交流学院">国际交流学院</option>
+                    <option value="机械学院">机械学院</option>
+                    <option value="理学院">理学院</option>
+                    <option value="材料学院">材料学院</option>
+                    <option value="电气学院">电气学院</option>
+                    <option value="管理学院">管理学院</option>
+                    <option value="经济学院">经济学院</option>
+                    <option value="艺建学院">艺建学院</option>
+                    <option value="经济学院">经济学院</option>
+                    <option value="土建学院">土建学院</option>
+                    <option value="文化传媒学院">文化传媒学院</option>
+                    <option value="新能源学院">新能源学院</option>
+                    <option value="其他">其他</option>
+                </select>
+                <!--<label for="classes">专业：</label>-->
+                <!--<input type="text" id="classes" name="classes" placeholder="请输入您的专业">-->
+                <label for="classes" class="col-sm-4 control-label">专业：</label>
+                <select class="form-control col-xs-6 " name="classes" id="classes" style="width: 98%;height: 40px" >
+                    <option>计算机科学与技术</option>
+                    <option>大数据</option>
+                    <option>软件工程</option>
+                    <option>物联网工程</option>
+                    <option>通信工程</option>
+                    <option>电子信息工程</option>
+                    <option>其他</option>
+                </select>
+                <label for="signdepartment" class="col-sm-4 control-label">申报部门：</label>
+                <select class="form-control col-xs-6 " name="signDepartment" id="signdepartment" style="width: 98%;height: 40px" >
+                    <option>技术部</option>
+                    <option>服务平台</option>
+                    <option>网络部</option>
+                    <option>运维部</option>
+                    <option>企划部</option>
+                </select>
+                <label for="grade">高考成绩：</label>
+                <input type="number" id="grade" name="grade" value="0.0" placeholder="请输入您的高考成绩">
+                <label for="phone">联系电话：</label>
+                <input type="text" id="phone" name="phone" placeholder="请输入您的联系电话">
+                <label for="qq">QQ：</label>
+                <input type="text" id="qq" name="qq" placeholder="请输入您的QQ">
+                <div class="form-group" >
+                    <label>爱好、特长（100字以内）</label>
+                    <textarea class="form-control" id="hobby" name="hobby" style="width: 96%" rows="3" placeholder="请输入 ..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>申请加入的理由（100字以内）</label>
+                    <textarea class="form-control" id="signreason" name="signreason" style="width: 96%" rows="3" placeholder="请输入 ..."></textarea>
+                </div>
+                <button type="submit" >提交信息</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div align="center">Copyright &copy; 2019-2019. All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">大学生探索网—技术部(群号:755860080)</a>
+</div>
+<!-- Javascript -->
+<script src="/static/assets/js/jquery-1.8.2.min.js"></script>
+<script src="/static/assets/js/bootstrap.min.js"></script>
+<script src="/static/assets/js/jquery.backstretch.min.js"></script>
+<script src="/static/assets/js/scripts.js"></script>
+<!-- bootstrap datepicker -->
+<script src="/static/assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+<script>
+    $('#datepicker').datepicker({
+        autoclose: true,
+        language: 'zh-CN',
+        format: "yyyy-mm-dd",
+    })
+    $(document).ready(function () {
+        var time = new Date();
+        var day = ("0" + time.getDate()).slice(-2);
+        var month = ("0" + (time.getMonth() + 1)).slice(-2);
+        var today = time.getFullYear() + "-" + (month) + "-" + (day);
+        $('#datepicker').val(today);
+    })
+</script>
+<script>
+    function getValue() {
+        var id=$("#id").val();
+        var signname = $("#signname").val();
+        var gender = $("#gender option:selected").val();
+        var birthplace = $("#birthplace option:selected").val();
+        var datepicker =$("#datepicker").val();
+        var college =$("#college option:selected").val();
+        var classes =$("#classes option:selected").val();
+        var signdepartment =$("#signdepartment option:selected").val();
+        var grade =$("#grade").val();
+        var phone = $("#phone").val();
+        var qq = $("#qq").val();
+        var hobby = $("#hobby").val();
+        var signreason = $("#signreason").val();
+        $.ajax({
+            async:"false",
+            type:"post",
+            dataType:"json",
+            url:"/message/save",
+            data:{
+                'id':id,
+                'signname':signname,
+                'gender':gender,
+                'birthplace':birthplace,
+                'datepicker':datepicker,
+                'college':college,
+                'classes':classes,
+                'signdepartment':signdepartment,
+                'grade':grade,
+                'phone':phone,
+                'qq':qq,
+                'hobby':hobby,
+                'signreason':signreason
+            }
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<div class="row">
+    <div class="col-xs-6">
+        <dl>
+            <dt>用户名：</dt>
+            <dd><p th:text="${user.username}"></p></dd>
+            <br />
+            <dt>用户角色：</dt>
+            <dd><p th:text="${user.role}"></p></dd>
+            <br />
+            <dt>创建时间：</dt>
+            <dd><p th:text="${#dates.format(user.createtime, 'yyyy-MM-dd')}"></p></dd>
+            <br />
+
+        </dl>
+    </div>
+
+    <div class="col-xs-6">
+        <dl>
+            <dt>手机：</dt>
+            <dd><p th:text="${user.phone}"></p></dd>
+            <br />
+            <dt>部门：</dt>
+            <dd><p th:text="${user.department}"></p></dd>
+            <br />
+            <dt>更新时间：</dt>
+            <dd><p th:text="${#dates.format(user.lastlogintime, 'yyyy-MM-dd')}"></p></dd>
+        </dl>
+    </div>
+</div>
+</html>
